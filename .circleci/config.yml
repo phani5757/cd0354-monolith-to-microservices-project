@@ -21,8 +21,7 @@ jobs:
             docker tag udagram-api-user phani5757/udagram-api-user:v1
             docker tag udagram-frontend phani5757/udagram-frontend:v1
             docker tag udagram-reverseproxy phani5757/udagram-reverseproxy:v1
-
-            # Log in to Docker Hub using environment variables
+            
             echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
 
 
