@@ -19,6 +19,13 @@ spec:
         image: phani5757/udagram-api-feed:v1
         ports:
         - containerPort: 8100
+        resources:
+          requests:
+            cpu: 100m
+            memory: 256Mi
+          limits:
+            cpu: 500m
+            memory: 512Mi
         envFrom:
         - configMapRef:
             name: env-config
