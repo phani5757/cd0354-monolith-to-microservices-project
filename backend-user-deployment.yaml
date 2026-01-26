@@ -18,7 +18,7 @@ spec:
       - name: backend-user
         image: phani5757/udagram-api-user:v1
         ports:
-        - containerPort: 80
+        - containerPort: 8100
         envFrom:
         - configMapRef:
             name: env-config
@@ -33,3 +33,8 @@ spec:
             secretKeyRef:
               name: app-environment-secret
               key: POSTGRES_PASSWORD
+        - name: JWT_SECRET  
+          valueFrom:
+            secretKeyRef:
+              name: aws-credentials
+              key: aws_secret_access_key
